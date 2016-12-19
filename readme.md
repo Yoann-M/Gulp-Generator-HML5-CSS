@@ -12,7 +12,7 @@ I Dependency installation
    * $ npm install
 
 
-II Init project !!! Make this only at the first install
+II Init project - Make this only at the first install !
 -------------------------------------------------------
 
 * $ gulp init
@@ -21,7 +21,7 @@ II Init project !!! Make this only at the first install
 III Serve project
 -----------------
 
-Generate server, wathc files and live reload
+Generate server, watch files and live reload
 
 * $ gulp serve
 
@@ -33,7 +33,11 @@ Minify images, css and js files.. And all of other files in prod/
 
 * $ gulp build
 
-                                 
+
+
+Others Informations
+-------------------
+
 
 > APP STRUCTURE AFTER $ gulp init-project
 
