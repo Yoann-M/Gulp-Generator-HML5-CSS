@@ -1,24 +1,18 @@
 GULP GENERATOR HTML5 CSS DOCUMENTATION
 ======================================
 
-I Dependency installation 
+Installation 
 --------------------------
 
 1. REPOSITORY
-   * $ cd my-folder-path
+   * $ cd Gulp-Generator-HML5-CSS
 2. BOWER
    * $ bower install
 3. NPM
    * $ npm install
 
 
-II Init project - Make this only at the first install !
--------------------------------------------------------
-
-* $ gulp init
-
-
-III Serve project
+Serve project
 -----------------
 
 Generate server, watch files and live reload
@@ -26,8 +20,8 @@ Generate server, watch files and live reload
 * $ gulp serve
 
 
-VI Build project
-----------------
+Build project
+-------------
 
 Minify images, css and js files.. And all of other files in prod/ 
 
@@ -42,11 +36,9 @@ Dependencies included in the project
 * jQuery
 
 
-Others Informations
+APP STRUCTURE
 -------------------
 
-
-> APP STRUCTURE AFTER $ gulp init
 
 * app
   * -- index.html <- Modify this !
@@ -57,13 +49,3 @@ Others Informations
   * -- img  <- Add image and folder image !
   * -- components  <- Dont modify, all bower components
    
-
-> VENDOR is A personal custom to init project
-
-* vendor
-  * -- index.html
-  * -- img 
-  * -- js
-    * -- app.js
-  * -- css
-    * -- app.css
