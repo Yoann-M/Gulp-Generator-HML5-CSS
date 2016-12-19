@@ -39,7 +39,7 @@ Others Informations
 -------------------
 
 
-> APP STRUCTURE AFTER $ gulp init-project
+> APP STRUCTURE AFTER $ gulp init
 
 * app
   * -- index.html <- Modify this !
