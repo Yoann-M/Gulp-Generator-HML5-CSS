@@ -1,0 +1,27 @@
+{
+  "name": "generator-html-css",
+  "authors": [
+    "Yoann-M"
+  ],
+  "description": "Generator for HTML & CSS projects",
+  "main": "",
+  "keywords": [
+    "Generator",
+    "HTML",
+    "CSS"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "wow": "wowjs#^1.1.2",
+    "animate.css": "^3.5.2",
+    "reset-css": "^2.0.2011012603"
+  }
+}
