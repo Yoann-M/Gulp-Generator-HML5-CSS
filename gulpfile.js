@@ -28,8 +28,9 @@ gulp.task('serve', function () {
     gulp.watch("./app/css/*.css").on('change', browserSync.reload);
     // Watch jss
     gulp.watch("./app/js/*.js").on('change', browserSync.reload);
-    // Watch html
+    // Watch html or php
     gulp.watch("./app/**/*.html").on('change', browserSync.reload);
+    gulp.watch("./app/**/*.php").on('change', browserSync.reload);
     // Watch img
     watch('app/img/**/*').on('change', browserSync.reload);
     // Watch font
@@ -48,8 +49,19 @@ gulp.task('step1-clean', function () {
     });
 });
 
-// Copy and Minify images
-gulp.task('step2-imagemin', function () {
+// Copy files (html or php files, fonts, favicon)
+gulp.task('step2-copy', function () {
+    gulp.src('./app/favicon.ico')
+        .pipe(gulp.dest('./prod/'));
+    gulp.src('./app/font/**/*')
+        .pipe(gulp.dest('./prod/font/'));
+    gulp.src([ '!./app/components/**','./app/**/*.{html,php}'])
+        .pipe(gulp.dest('./prod/'));
+});
+
+
+// Minify images
+gulp.task('step3-imagemin', function () {
     gulp.src('./app/*.ico')
         .pipe(gulp.dest('./prod/'));
     gulp.src('./app/img/**/*')
@@ -57,19 +69,14 @@ gulp.task('step2-imagemin', function () {
         .pipe(gulp.dest('./prod/img/'))
 });
 
-// Copy fonts
-gulp.task('step3-fonts', function () {
-    gulp.src('./app/font/**/*')
-        .pipe(gulp.dest('./prod/font/'));
-});
 
 // Useref to compress all css and js files (presents in build tag in ./app/index.html)
 gulp.task('step4-useref', function () {
-    return gulp.src('./app/index.html')
+    return gulp.src('./app/index.{html,php}')
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', cleanCSS()))
         .pipe(gulp.dest('prod'));
 });
 
-gulp.task('build', ['step1-clean', 'step2-imagemin', 'step3-fonts', 'step4-useref']);
+gulp.task('build', ['step1-clean', 'step2-copy', 'step3-imagemin', 'step4-useref']);
