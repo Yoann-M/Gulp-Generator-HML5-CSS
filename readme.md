@@ -34,6 +34,13 @@ Minify images, css and js files.. And all of other files in prod/
 * $ gulp build
 
 
+Dependencies included in the project
+------------------------------------
+
+* wow.js
+* animate.css
+* jQuery
+
 
 Others Informations
 -------------------
