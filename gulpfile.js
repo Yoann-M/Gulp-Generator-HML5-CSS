@@ -55,8 +55,7 @@ gulp.task('step2-copy', function () {
         .pipe(gulp.dest('./prod/'));
     gulp.src('./app/font/**/*')
         .pipe(gulp.dest('./prod/font/'));
-    gulp.src([ '!./app/components/**','./app/**/*.{html,php}'])
-        .pipe(gulp.dest('./prod/'));
+
 });
 
 
@@ -72,7 +71,7 @@ gulp.task('step3-imagemin', function () {
 
 // Useref to compress all css and js files (presents in build tag in ./app/index.html)
 gulp.task('step4-useref', function () {
-    return gulp.src('./app/index.{html,php}')
+    return gulp.src('./app/*.{html,php}')
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', cleanCSS()))
