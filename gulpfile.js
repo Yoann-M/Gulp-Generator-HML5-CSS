@@ -25,12 +25,16 @@ gulp.task('serve', function () {
     browserSync.init({
         server: "./app"
     });
+    // If use MAMP & php, replace browserSync.init by this
+    //  browserSync.init({
+    //     proxy: "localhost:8888",
+    //     startPath: '/folder-name-in-htdocs/app/index.php'
+    // });
     gulp.watch("./app/css/*.css").on('change', browserSync.reload);
     // Watch jss
     gulp.watch("./app/js/*.js").on('change', browserSync.reload);
     // Watch html or php
-    gulp.watch("./app/**/*.html").on('change', browserSync.reload);
-    gulp.watch("./app/**/*.php").on('change', browserSync.reload);
+    gulp.watch("./app/**/*.{html,php}").on('change', browserSync.reload);
     // Watch img
     watch('app/img/**/*').on('change', browserSync.reload);
     // Watch font
